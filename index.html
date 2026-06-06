@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhen Yu & Yan Zhang — Wedding RSVP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rsvp.css">
+</head>
+<body class="rsvp-page">
+    <section class="hero rsvp-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="couple-names">
+                    <span class="name">Zhen Yu</span>
+                    <span class="ampersand">&</span>
+                    <span class="name">Yan Zhang</span>
+                </div>
+                <div class="wedding-details">
+                    <div class="date">Saturday, August 22, 2026</div>
+                    <div class="location">Allied Arts Guild · Menlo Park</div>
+                </div>
+                <p class="invitation-text">We saved the date with you — now we would love to celebrate together.</p>
+            </div>
+            <div class="hero-button">
+                <button class="scroll-button" onclick="scrollToSection('details')">
+                    <span>View details</span>
+                    <div class="scroll-arrow">↓</div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp-intro">
+        <div class="section-label">You're invited</div>
+        <h2>Join us for our wedding</h2>
+        <p>
+            After years of adventures, late-night conversations, and quiet ordinary days,
+            we are getting married. It would mean the world to have you there.
+        </p>
+    </section>
+
+    <section class="rsvp-details" id="details">
+        <article class="detail-card">
+            <h3>Venue</h3>
+            <div class="venue-name">Allied Arts Guild</div>
+            <div class="venue-address">
+                75 Arbor Rd<br>
+                Menlo Park, California 94025
+            </div>
+            <a class="map-link" href="https://maps.google.com/?q=Allied+Arts+Guild+75+Arbor+Rd+Menlo+Park+CA" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+        </article>
+
+        <article class="detail-card">
+            <h3>Schedule</h3>
+            <ul class="schedule-list">
+                <li>
+                    <span class="schedule-time">3:30 PM</span>
+                    <span class="schedule-event">Guest arrival</span>
+                </li>
+                <li>
+                    <span class="schedule-time">4:00 PM</span>
+                    <span class="schedule-event">
+                        Ceremony begins
+                        <span class="note">Please be seated — we begin promptly</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="schedule-time">4:30 PM</span>
+                    <span class="schedule-event">Cocktail hour</span>
+                </li>
+                <li>
+                    <span class="schedule-time">5:30 PM</span>
+                    <span class="schedule-event">Reception</span>
+                </li>
+                <li>
+                    <span class="schedule-time">7:30 PM</span>
+                    <span class="schedule-event">Afterparty</span>
+                </li>
+            </ul>
+        </article>
+
+        <article class="detail-card">
+            <h3>Dress Code</h3>
+            <div class="dress-code">Garden formal</div>
+            <div class="dress-note">
+                Think cocktail attire with comfortable shoes for the lawn and garden paths.
+                Soft neutrals, florals, and warm tones are welcome.
+            </div>
+        </article>
+    </section>
+
+    <section class="rsvp-photo-strip" aria-hidden="true">
+        <img src="assets/images/wedding/holding-hands-window.jpg" alt="">
+        <img src="assets/images/wedding/couple-close.jpg" alt="">
+    </section>
+
+    <section class="form-section rsvp-form-section" id="form-section">
+        <div class="form-content">
+            <div class="form-header">
+                <h2>Kindly Respond</h2>
+                <p>Please RSVP by July 10, 2026.<br>One response per invitation, please.</p>
+            </div>
+
+            <div class="form-container">
+                <form class="wedding-form" id="rsvpForm" method="POST" target="hidden_iframe">
+                    <div class="form-group">
+                        <label for="yourName">Your name</label>
+                        <input type="text" id="yourName" required placeholder="Full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="bringingPartner">
+                            <span>I'm bringing my partner</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group partner-group" id="partnerGroup" hidden>
+                        <label for="partnerName">Partner's name</label>
+                        <input type="text" id="partnerName" placeholder="Full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Will you attend?</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="attending" value="Yes" checked>
+                                <span>Yes</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="attending" value="No">
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes <span class="label-optional">(optional)</span></label>
+                        <textarea id="notes" rows="3" placeholder="Dietary restrictions, accessibility needs, or a note for us"></textarea>
+                    </div>
+
+                    <input type="hidden" name="fvv" value="1">
+                    <input type="hidden" name="pageHistory" value="0">
+                    <input type="hidden" name="submissionTimestamp" value="">
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Submit RSVP</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                </form>
+
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <div class="success-content">
+                        <div class="success-icon">✨</div>
+                        <h3>Thank you!</h3>
+                        <p>We've received your RSVP and can't wait to celebrate with you.</p>
+                    </div>
+                </div>
+
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/rsvp.js"></script>
+</body>
+</html>

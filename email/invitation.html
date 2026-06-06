@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation Email Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 32px 16px;
+            background: #ece7df;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .preview-note {
+            max-width: 600px;
+            margin: 0 auto 16px;
+            font: 13px/1.5 Arial, sans-serif;
+            color: #666;
+            text-align: center;
+        }
+
+        .email-wrap {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fffdf9;
+            border: 1px solid #e8dfd2;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+        }
+
+        .email-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .email-body {
+            padding: 36px 40px 40px;
+            color: #3a3a3a;
+        }
+
+        .eyebrow {
+            font: 11px/1 Arial, sans-serif;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: #8B4513;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 34px;
+            font-weight: 400;
+            line-height: 1.15;
+            color: #2c2c2c;
+        }
+
+        .date-line {
+            margin: 0 0 24px;
+            font: 14px/1.6 Arial, sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #7a6a5d;
+        }
+
+        p {
+            margin: 0 0 18px;
+            font-size: 17px;
+            line-height: 1.75;
+            color: #555;
+        }
+
+        .details-box {
+            margin: 28px 0;
+            padding: 22px 24px;
+            background: #f8f3ec;
+            border-left: 3px solid #8B4513;
+        }
+
+        .details-box strong {
+            display: block;
+            margin-bottom: 8px;
+            font: 12px/1 Arial, sans-serif;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #8B4513;
+        }
+
+        .details-box span {
+            display: block;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .cta-wrap {
+            text-align: center;
+            margin: 32px 0 10px;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #8B4513;
+            color: #fff !important;
+            text-decoration: none;
+            font: 13px/1 Arial, sans-serif;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            padding: 0 40px 36px;
+            font: 13px/1.6 Arial, sans-serif;
+            color: #888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p class="preview-note">
+        Preview only. After deploying, replace image URLs with absolute GitHub Pages links before importing into Brevo or Mailchimp.
+    </p>
+
+    <!-- Email content below can be copied into your email tool -->
+    <div class="email-wrap">
+        <div class="email-hero">
+            <!-- Replace with: https://yzzzzzzzzy.github.io/rsvp/assets/images/wedding/cover.jpg -->
+            <img src="../assets/images/wedding/cover.jpg" alt="Zhen Yu and Yan Zhang">
+        </div>
+
+        <div class="email-body">
+            <div class="eyebrow">Wedding Invitation</div>
+            <h1>Zhen Yu &amp; Yan Zhang</h1>
+            <p class="date-line">Saturday, August 22, 2026 · Menlo Park, California</p>
+
+            <p>Dear {{first_name}},</p>
+
+            <p>
+                You saved the date with us — thank you. We are delighted to invite you
+                to celebrate our wedding at Allied Arts Guild in Menlo Park.
+            </p>
+
+            <div class="details-box">
+                <strong>When</strong>
+                <span>Guest arrival at 3:30 PM</span>
+                <span>Ceremony begins at 4:00 PM sharp</span>
+                <span>Reception from 5:30 PM · Afterparty from 7:30 PM</span>
+            </div>
+
+            <div class="details-box">
+                <strong>Where</strong>
+                <span>Allied Arts Guild</span>
+                <span>75 Arbor Rd, Menlo Park, CA 94025</span>
+            </div>
+
+            <div class="details-box">
+                <strong>Dress Code</strong>
+                <span>Garden formal — cocktail attire with comfortable shoes for the lawn.</span>
+            </div>
+
+            <p>Please RSVP by July 10, 2026. One response per invitation, please.</p>
+
+            <div class="cta-wrap">
+                <a class="cta" href="https://yzzzzzzzzy.github.io/rsvp/">RSVP Online</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            With love,<br>
+            Zhen &amp; Yan
+        </div>
+    </div>
+</body>
+</html>
