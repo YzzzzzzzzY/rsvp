@@ -26,13 +26,10 @@ function bindGoogleFormFields(form) {
 
     form.action = action;
     document.getElementById('yourName').name = fields.yourName;
-    document.getElementById('partnerName').name = fields.partnerName;
 
     form.querySelectorAll('input[name="attending"]').forEach((radio) => {
         radio.name = fields.attending;
     });
-
-    document.getElementById('notes').name = fields.notes;
 
     let fbzxInput = form.querySelector('input[name="fbzx"]');
     if (!fbzxInput) {
@@ -53,8 +50,13 @@ function bindGoogleFormFields(form) {
     partialInput.value = partialResponse;
 }
 
-function updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput) {
-    const showPartner = bringingPartner.checked;
+function isAttendingYes(form) {
+    const attendingField = form.querySelector('input[type="radio"]:checked');
+    return attendingField && attendingField.value === 'Yes';
+}
+
+function updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput, attending) {
+    const showPartner = attending && bringingPartner.checked;
     partnerGroup.hidden = !showPartner;
     partnerInput.required = showPartner;
 
@@ -66,18 +68,42 @@ function updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput) {
     }
 }
 
+function updateAttendingDetails(form, attendingDetails, bringingPartner, partnerGroup, partnerInput, notesInput) {
+    const attending = isAttendingYes(form);
+    attendingDetails.hidden = !attending;
+
+    bringingPartner.checked = false;
+    updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput, attending);
+
+    if (attending) {
+        notesInput.name = RSVP_FORM_CONFIG.fields.notes;
+    } else {
+        notesInput.removeAttribute('name');
+        notesInput.value = '';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('rsvpForm');
     const successMessage = document.getElementById('successMessage');
+    const successText = document.getElementById('successText');
+    const attendingDetails = document.getElementById('attendingDetails');
     const bringingPartner = document.getElementById('bringingPartner');
     const partnerGroup = document.getElementById('partnerGroup');
     const partnerInput = document.getElementById('partnerName');
+    const notesInput = document.getElementById('notes');
+    const attendingRadios = form.querySelectorAll('input[name="attending"]');
 
     bindGoogleFormFields(form);
-    updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput);
+
+    attendingRadios.forEach((radio) => {
+        radio.addEventListener('change', () => {
+            updateAttendingDetails(form, attendingDetails, bringingPartner, partnerGroup, partnerInput, notesInput);
+        });
+    });
 
     bringingPartner.addEventListener('change', () => {
-        updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput);
+        updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput, isAttendingYes(form));
     });
 
     const observer = new IntersectionObserver((entries) => {
@@ -104,6 +130,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.addEventListener('submit', function() {
+        if (!isAttendingYes(form)) {
+            bringingPartner.checked = false;
+            partnerInput.removeAttribute('name');
+            partnerInput.value = '';
+            notesInput.removeAttribute('name');
+            notesInput.value = '';
+            successText.textContent = "Thank you for letting us know. We'll miss you!";
+        } else {
+            successText.textContent = "We've received your RSVP and can't wait to celebrate with you.";
+        }
+
         const btnText = form.querySelector('.btn-text');
         const btnLoading = form.querySelector('.btn-loading');
 

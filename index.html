@@ -109,27 +109,10 @@
             <div class="form-container">
                 <form class="wedding-form" id="rsvpForm" method="POST" target="hidden_iframe">
                     <div class="form-group">
-                        <label for="yourName">Your name</label>
-                        <input type="text" id="yourName" required placeholder="Full name">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="checkbox-item">
-                            <input type="checkbox" id="bringingPartner">
-                            <span>I'm bringing my partner</span>
-                        </label>
-                    </div>
-
-                    <div class="form-group partner-group" id="partnerGroup" hidden>
-                        <label for="partnerName">Partner's name</label>
-                        <input type="text" id="partnerName" placeholder="Full name">
-                    </div>
-
-                    <div class="form-group">
                         <label>Will you attend?</label>
                         <div class="radio-group">
                             <label class="radio-item">
-                                <input type="radio" name="attending" value="Yes" checked>
+                                <input type="radio" name="attending" value="Yes" required>
                                 <span>Yes</span>
                             </label>
                             <label class="radio-item">
@@ -140,8 +123,27 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="notes">Notes <span class="label-optional">(optional)</span></label>
-                        <textarea id="notes" rows="3" placeholder="Dietary restrictions, accessibility needs, or a note for us"></textarea>
+                        <label for="yourName">Your name</label>
+                        <input type="text" id="yourName" required placeholder="Full name">
+                    </div>
+
+                    <div id="attendingDetails" hidden>
+                        <div class="form-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="bringingPartner">
+                                <span>I'm bringing my partner</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group partner-group" id="partnerGroup" hidden>
+                            <label for="partnerName">Partner's name</label>
+                            <input type="text" id="partnerName" placeholder="Full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Notes <span class="label-optional">(optional)</span></label>
+                            <textarea id="notes" rows="3" placeholder="Dietary restrictions, accessibility needs, or a note for us"></textarea>
+                        </div>
                     </div>
 
                     <input type="hidden" name="fvv" value="1">
@@ -158,7 +160,7 @@
                     <div class="success-content">
                         <div class="success-icon">✨</div>
                         <h3>Thank you!</h3>
-                        <p>We've received your RSVP and can't wait to celebrate with you.</p>
+                        <p id="successText">We've received your RSVP.</p>
                     </div>
                 </div>
 
