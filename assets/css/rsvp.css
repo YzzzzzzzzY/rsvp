@@ -100,14 +100,6 @@ body.rsvp-page {
     line-height: 1.2;
 }
 
-.expand-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #8B4513;
-}
-
 .expand-teaser {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -169,6 +161,56 @@ body.rsvp-page {
 }
 
 .detail-block p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-top: 1rem;
+}
+
+.photo-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.drinks-intro {
+    margin-top: 1rem !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.92rem !important;
+    color: #666 !important;
+}
+
+.drink-card {
+    padding-top: 0.25rem;
+}
+
+.drink-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8B4513;
+    margin: 1.25rem 0 0.5rem;
+}
+
+.drink-card .detail-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin: 0 0 0.35rem;
+}
+
+.drink-card p:last-child {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     line-height: 1.6;
@@ -313,6 +355,11 @@ body.rsvp-page {
 
     .schedule-list li {
         grid-template-columns: 4rem 1fr;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
     }
 
     .rsvp-hero {
