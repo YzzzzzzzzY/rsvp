@@ -8,7 +8,7 @@ body.rsvp-page {
 
 .rsvp-hero {
     background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-                url('../images/wedding/cover.jpg') center/cover no-repeat;
+                url('../images/wedding/hero-cover.jpg') center/cover no-repeat;
 }
 
 .rsvp-hero .invitation-text {
@@ -164,6 +164,29 @@ body.rsvp-page {
     box-shadow: 0 14px 36px rgba(58, 42, 30, 0.12);
 }
 
+.scatter-solo {
+    margin: 2rem 0 2.5rem;
+}
+
+.scatter-solo img {
+    display: block;
+    width: 72%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 14px 36px rgba(58, 42, 30, 0.12);
+}
+
+.scatter-solo--left img {
+    margin-right: auto;
+    transform: rotate(-1.5deg);
+}
+
+.scatter-solo--right img {
+    margin-left: auto;
+    transform: rotate(1.5deg);
+}
+
 .stagger-pair {
     position: relative;
     min-height: 340px;
@@ -316,7 +339,7 @@ body.rsvp-page {
 .rsvp-form-section {
     min-height: auto;
     background: linear-gradient(180deg, rgba(247,244,239,0.2) 0%, rgba(247,244,239,1) 30%),
-                url('../images/wedding/couple-close.jpg') center top/cover no-repeat;
+                url('../images/wedding/form-bg-veil-garden.jpg') center top/cover no-repeat;
     align-items: center;
     padding: 3rem 0 5rem;
 }
@@ -382,6 +405,11 @@ body.rsvp-page {
         padding: 2rem 1rem 2.5rem;
     }
 
+    .scatter-solo img {
+        width: 88%;
+        height: 280px;
+    }
+
     .stagger-pair {
         min-height: 280px;
     }
@@ -426,6 +454,6 @@ body.rsvp-page {
 
     .rsvp-hero {
         background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-                    url('../images/wedding/cover.jpg') center 30%/cover no-repeat;
+                    url('../images/wedding/hero-cover.jpg') center 30%/cover no-repeat;
     }
 }

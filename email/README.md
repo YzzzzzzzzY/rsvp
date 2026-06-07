@@ -18,7 +18,7 @@ Open `email/invitation.html` locally to vibe on copy and layout.
 2. Open the file in a browser to preview.
 3. Deploy the site so images have public URLs.
 4. Replace relative image paths with absolute URLs, e.g.  
-   `https://yzzzzzzzzy.github.io/rsvp/assets/images/wedding/cover.jpg`
+   `https://yzzzzzzzzy.github.io/rsvp/assets/images/wedding/hero-cover.jpg`
 5. In Brevo: **Campaigns → Create → Code your own → Paste HTML**.
 6. Import your guest list from the save-the-date Google Sheet (Name + Email columns).
 7. Map `{{first_name}}` to the name column.
