@@ -182,40 +182,224 @@ body.rsvp-page {
     border-radius: 12px;
 }
 
-.drinks-intro {
-    margin-top: 1rem !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 0.92rem !important;
-    color: #666 !important;
+/* Signature drinks showcase */
+.drinks-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
 }
 
-.drink-card {
-    padding-top: 0.25rem;
+.drinks-section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2rem;
 }
 
-.drink-card h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #8B4513;
-    margin: 1.25rem 0 0.5rem;
-}
-
-.drink-card .detail-title {
+.drinks-section-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: clamp(2rem, 4.5vw, 2.6rem);
+    font-weight: 500;
     color: #2c2c2c;
-    margin: 0 0 0.35rem;
+    margin: 0 0 0.75rem;
 }
 
-.drink-card p:last-child {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.6;
+.drinks-section-header p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: #666;
     margin: 0;
+}
+
+.cocktail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.cocktail-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 22px;
+    padding: 1.75rem 1.5rem 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+}
+
+.cocktail-card:hover,
+.cocktail-card:focus-visible,
+.cocktail-card.is-selected {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.cocktail-card--his {
+    border-top: 3px solid #1F7A5C;
+}
+
+.cocktail-card--hers {
+    border-top: 3px solid #E07A3F;
+}
+
+.cocktail-card--his .cocktail-card-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(31, 122, 92, 0.14), transparent 68%);
+}
+
+.cocktail-card--hers .cocktail-card-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(224, 122, 63, 0.16), transparent 68%);
+}
+
+.cocktail-card-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.cocktail-illustration {
+    width: 140px;
+    margin: 0 auto 0.5rem;
+}
+
+.cocktail-illustration svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cocktail-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8B4513;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.cocktail-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    text-align: center;
+    margin: 0 0 0.35rem;
+    line-height: 1.15;
+}
+
+.cocktail-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #888;
+    text-align: center;
+    margin: 0 0 1.25rem;
+}
+
+.cocktail-ingredients {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.cocktail-ingredients li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: #555;
+    padding-left: 0.75rem;
+    border-left: 2px solid rgba(139, 69, 19, 0.15);
+}
+
+.cocktail-ingredients strong {
+    font-weight: 600;
+    color: #8B4513;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 0.35rem;
+}
+
+.cocktail-vibe {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.02rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: #666;
+    margin: 0;
+    text-align: center;
+}
+
+.form-hint {
+    margin: 0.25rem 0 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.4;
+}
+
+.drink-pref-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.drink-pref-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.7rem 0.85rem;
+    border: 2px solid rgba(139, 69, 19, 0.12);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.drink-pref-item:has(input:checked) {
+    border-color: #8B4513;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.drink-pref-item em {
+    font-style: normal;
+    color: #999;
+    font-size: 0.82rem;
+}
+
+.drink-pref-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.drink-pref-dot--his {
+    background: #1F7A5C;
+}
+
+.drink-pref-dot--hers {
+    background: #E07A3F;
+}
+
+.drink-pref-dot--neutral {
+    background: #8B4513;
+}
+
+.drink-pref-item input[type="checkbox"] {
+    accent-color: #8B4513;
+    width: 1rem;
+    height: 1rem;
 }
 
 .schedule-list {
@@ -335,6 +519,14 @@ body.rsvp-page {
 
 .map-link:hover {
     color: #A0522D;
+}
+
+@media (max-width: 820px) {
+    .cocktail-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 600px) {
