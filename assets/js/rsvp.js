@@ -115,8 +115,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.detail-card, .rsvp-intro, .form-section').forEach((section) => {
+    document.querySelectorAll('.expand-panel, .rsvp-intro, .form-section').forEach((section) => {
         observer.observe(section);
+    });
+
+    document.querySelectorAll('.expand-panel').forEach((panel) => {
+        panel.addEventListener('toggle', () => {
+            if (!panel.open) {
+                return;
+            }
+            document.querySelectorAll('.expand-panel').forEach((other) => {
+                if (other !== panel) {
+                    other.open = false;
+                }
+            });
+        });
     });
 
     const scrollButton = document.querySelector('.scroll-button');
