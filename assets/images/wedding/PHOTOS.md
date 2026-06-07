@@ -12,15 +12,15 @@ Numbers run **grass (01–13) → ground (14–18) → hands (19–21) → dress
 | **06** | `06-outdoor-backlit-veil.jpg` | Grass | Stagger right (with **05**) |
 | **07** | `07-outdoor-cedar-embrace.jpg` | Grass | Wide + caption |
 | **08** | `08-outdoor-kiss-blue-sky.jpg` | Grass | — |
-| **09** | `09-bright-veil-hearts-smile.jpg` | Grass | Stagger left (with **11**) |
+| **09** | `09-bright-veil-hearts-smile.jpg` | Grass | Stagger right (with **11**) |
 | **10** | `10-bright-lift-celebration.jpg` | Grass | Duo |
-| **11** | `11-bright-veil-blue-sky.jpg` | Grass | Stagger right (with **09**) |
+| **11** | `11-bright-veil-blue-sky.jpg` | Grass | Stagger left (with **09**) |
 | **12** | `12-detail-veil-roses-green.jpg` | Grass | Detail trio |
 | **13** | `13-form-garden-veil-canopy.jpg` | Grass | Form bg (CSS) |
-| **14** | `14-bright-sunlit-arch.jpg` | Ground | Polaroid |
+| **14** | `14-bright-sunlit-arch.jpg` | Ground | Detail main |
 | **15** | `15-bright-pillar-ferns.jpg` | Ground | Solo |
 | **16** | `16-bright-walking-hearts.jpg` | Ground | Duo |
-| **17** | `17-moody-groom-doorway.jpg` | Ground | Detail main |
+| **17** | `17-moody-groom-doorway.jpg` | Ground | Polaroid |
 | **18** | `18-moody-doorway-portrait.jpg` | Ground | Detail side |
 | **19** | `19-moody-ring-shoulder.jpg` | Hands | Solo accent |
 | **20** | `20-detail-hands-rings-bw.jpg` | Hands | Detail trio |
