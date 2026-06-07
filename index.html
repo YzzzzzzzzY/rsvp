@@ -27,180 +27,107 @@
                 <p class="invitation-text">We saved the date with you — now we would love to celebrate together.</p>
             </div>
             <div class="hero-button">
-                <button class="scroll-button" onclick="scrollToSection('info-section')">
-                    <span>View details</span>
+                <button class="scroll-button" onclick="scrollToSection('invitation-paper')">
+                    <span>View invitation</span>
                     <div class="scroll-arrow">↓</div>
                 </button>
             </div>
         </div>
     </section>
 
-    <section class="rsvp-intro">
-        <div class="section-label">You're invited</div>
-        <h2>Join us for our wedding</h2>
-        <p>Expand a section below for photos and event info — then see what we're pouring at cocktail hour.</p>
-    </section>
+    <main class="invitation-paper" id="invitation-paper">
+        <section class="letter-block">
+            <p class="letter-line">However far you are coming from,</p>
+            <p class="letter-line">you are part of the day we have been building toward.</p>
+            <p class="letter-slash">/</p>
+            <p class="letter-en">We cannot wait to see you there.</p>
+        </section>
 
-    <section class="story-section" id="info-section">
-        <details class="expand-panel">
-            <summary class="expand-summary">
-                <img class="expand-thumb" src="assets/images/wedding/couple-close.jpg" alt="">
-                <div class="expand-heading">
-                    <h3>Us</h3>
-                    <p class="expand-teaser">A few photos from our engagement shoot.</p>
-                </div>
-                <span class="expand-chevron" aria-hidden="true"></span>
-            </summary>
-            <div class="expand-body">
-                <div class="photo-grid">
-                    <img src="assets/images/wedding/holding-hands-window.jpg" alt="">
-                    <img src="assets/images/wedding/couple-close.jpg" alt="">
-                    <img src="assets/images/wedding/couple-floral.jpg" alt="">
-                    <img src="assets/images/wedding/couple-white-seated.jpg" alt="">
-                    <img src="assets/images/wedding/window-back.jpg" alt="">
-                    <img src="assets/images/wedding/couple-sitting.jpg" alt="">
-                    <img src="assets/images/wedding/couple-floor.jpg" alt="">
-                    <img src="assets/images/wedding/cover.jpg" alt="">
-                </div>
-            </div>
-        </details>
-
-        <details class="expand-panel expand-panel--details" id="details">
-            <summary class="expand-summary">
-                <img class="expand-thumb" src="assets/images/wedding/couple-sitting.jpg" alt="">
-                <div class="expand-heading">
-                    <h3>Event details</h3>
-                    <p class="expand-teaser">Venue, schedule, and dress code.</p>
-                </div>
-                <span class="expand-chevron" aria-hidden="true"></span>
-            </summary>
-            <div class="expand-body expand-body--details">
-                <div class="detail-block">
-                    <h4>Venue</h4>
-                    <p class="detail-title">Allied Arts Guild</p>
-                    <p>75 Arbor Rd, Menlo Park, California 94025</p>
-                    <a class="map-link" href="https://maps.google.com/?q=Allied+Arts+Guild+75+Arbor+Rd+Menlo+Park+CA" target="_blank" rel="noopener noreferrer">Open in Maps</a>
-                </div>
-
-                <div class="detail-block">
-                    <h4>Schedule</h4>
-                    <ul class="schedule-list">
-                        <li>
-                            <span class="schedule-time">3:30 PM</span>
-                            <span class="schedule-event">Guest arrival</span>
-                        </li>
-                        <li>
-                            <span class="schedule-time">4:00 PM</span>
-                            <span class="schedule-event">
-                                Ceremony begins
-                                <span class="note">Please be seated — we begin promptly</span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="schedule-time">4:30 PM</span>
-                            <span class="schedule-event">Cocktail hour</span>
-                        </li>
-                        <li>
-                            <span class="schedule-time">5:30 PM</span>
-                            <span class="schedule-event">Reception</span>
-                        </li>
-                        <li>
-                            <span class="schedule-time">7:30 PM</span>
-                            <span class="schedule-event">Afterparty</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="detail-block">
-                    <h4>Dress Code</h4>
-                    <p class="detail-title">Garden formal</p>
-                    <p>Think cocktail attire with comfortable shoes for the lawn and garden paths. Soft neutrals, florals, and warm tones are welcome.</p>
-                </div>
-            </div>
-        </details>
-
-    </section>
-
-    <section class="drinks-section" id="drinks-section">
-        <div class="drinks-section-header">
-            <div class="section-label">Cocktail hour</div>
-            <h2>His &amp; Her Signature Drinks</h2>
-            <p>Two pours from us, plus wine, beer, and non-alcoholic options at the bar.</p>
+        <div class="scatter stagger-pair" aria-hidden="true">
+            <img class="scatter-photo scatter-photo--tall scatter-photo--left" src="assets/images/wedding/couple-close.jpg" alt="">
+            <img class="scatter-photo scatter-photo--small scatter-photo--right" src="assets/images/wedding/couple-black-wide.jpg" alt="">
         </div>
 
-        <div class="cocktail-grid">
-            <article class="cocktail-card cocktail-card--his" data-drink-checkbox="prefAgave" tabindex="0" role="button" aria-label="Agave Empowerment — his signature drink">
-                <div class="cocktail-card-glow"></div>
-                <div class="cocktail-illustration">
-                    <svg viewBox="0 0 200 240" aria-hidden="true">
-                        <ellipse cx="100" cy="218" rx="52" ry="10" fill="rgba(16,92,70,0.12)"/>
-                        <path d="M72 88 L128 88 L118 200 Q100 212 82 200 Z" fill="url(#emeraldLiquid)"/>
-                        <path d="M68 84 L132 84 L128 88 L72 88 Z" fill="rgba(255,255,255,0.55)"/>
-                        <ellipse cx="100" cy="84" rx="32" ry="5" fill="rgba(255,255,255,0.35)"/>
-                        <circle cx="118" cy="72" r="14" fill="#7BC67E" opacity="0.9"/>
-                        <circle cx="118" cy="72" r="9" fill="#A8E6A1"/>
-                        <path d="M86 64 Q78 52 70 44" stroke="#5FAF62" stroke-width="3" fill="none" stroke-linecap="round"/>
-                        <path d="M92 60 Q88 48 84 38" stroke="#7BC67E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                        <path d="M98 62 Q96 50 94 40" stroke="#5FAF62" stroke-width="2" fill="none" stroke-linecap="round"/>
-                        <defs>
-                            <linearGradient id="emeraldLiquid" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="#3DAA7D"/>
-                                <stop offset="55%" stop-color="#1F7A5C"/>
-                                <stop offset="100%" stop-color="#145C45"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="cocktail-badge">His — Zhen</div>
-                <h3 class="cocktail-name">Agave Empowerment</h3>
-                <p class="cocktail-sub">A bold &amp; refreshing classic tequila sour</p>
-                <ul class="cocktail-ingredients">
-                    <li><strong>Base</strong> Premium Tequila Blanco</li>
-                    <li><strong>Mixers</strong> Fresh lime juice, simple syrup</li>
-                    <li><strong>Infusion</strong> Muddled cucumber &amp; cool mint</li>
-                    <li><strong>Finish</strong> Green Chartreuse — botanical aroma, emerald hue</li>
-                </ul>
-                <p class="cocktail-vibe">A sharp, botanically rich twist on a classic sour — crisp, energizing, and herbal for a summer night.</p>
-            </article>
+        <section class="info-section" id="when-where">
+            <div class="section-label">When &amp; Where</div>
+            <h2 class="info-title">Time &amp; Location</h2>
+            <div class="info-card">
+                <p class="info-lead">Saturday, August 22, 2026</p>
+                <p class="info-name">Allied Arts Guild</p>
+                <p class="info-body">75 Arbor Rd, Menlo Park, California 94025</p>
+                <a class="map-link" href="https://maps.google.com/?q=Allied+Arts+Guild+75+Arbor+Rd+Menlo+Park+CA" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+            </div>
+        </section>
 
-            <article class="cocktail-card cocktail-card--hers" data-drink-checkbox="prefSylva" tabindex="0" role="button" aria-label="Sylva Spritz — her signature drink">
-                <div class="cocktail-card-glow"></div>
-                <div class="cocktail-illustration">
-                    <svg viewBox="0 0 200 240" aria-hidden="true">
-                        <ellipse cx="100" cy="218" rx="48" ry="10" fill="rgba(224,112,64,0.14)"/>
-                        <path d="M78 70 L122 70 L114 205 Q100 218 86 205 Z" fill="url(#spritzLiquid)"/>
-                        <circle cx="92" cy="110" r="3" fill="rgba(255,255,255,0.55)"/>
-                        <circle cx="108" cy="130" r="2.5" fill="rgba(255,255,255,0.45)"/>
-                        <circle cx="98" cy="155" r="3.5" fill="rgba(255,255,255,0.5)"/>
-                        <circle cx="112" cy="175" r="2" fill="rgba(255,255,255,0.4)"/>
-                        <circle cx="90" cy="188" r="2.5" fill="rgba(255,255,255,0.45)"/>
-                        <path d="M130 78 C148 78 158 92 154 108 C150 124 132 128 122 118" stroke="#F4A261" stroke-width="8" fill="none" stroke-linecap="round"/>
-                        <circle cx="154" cy="108" r="10" fill="#FFBE7B"/>
-                        <circle cx="154" cy="108" r="6" fill="#FFD4A8"/>
-                        <defs>
-                            <linearGradient id="spritzLiquid" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="#FFBE7B"/>
-                                <stop offset="45%" stop-color="#F08A4B"/>
-                                <stop offset="100%" stop-color="#D4622A"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="cocktail-badge">Hers — Yan</div>
-                <h3 class="cocktail-name">Sylva Spritz</h3>
-                <p class="cocktail-sub">A sparkling &amp; sophisticated Italian classic</p>
-                <ul class="cocktail-ingredients">
-                    <li><strong>Base</strong> Aperol — bitter-sweet aperitivo</li>
-                    <li><strong>Bubbles</strong> Gloria Ferrer Sonoma Brut</li>
-                    <li><strong>Splash</strong> Crisp club soda</li>
-                    <li><strong>Garnish</strong> Fresh orange slice</li>
+        <figure class="scatter polaroid" aria-hidden="true">
+            <img src="assets/images/wedding/couple-floor.jpg" alt="">
+        </figure>
+
+        <section class="info-section" id="schedule">
+            <div class="section-label">The day</div>
+            <h2 class="info-title">Schedule</h2>
+            <div class="info-card">
+                <ul class="schedule-list">
+                    <li>
+                        <span class="schedule-time">3:30 PM</span>
+                        <span class="schedule-event">Guest arrival</span>
+                    </li>
+                    <li>
+                        <span class="schedule-time">4:00 PM</span>
+                        <span class="schedule-event">
+                            Ceremony begins
+                            <span class="note">Please be seated — we begin promptly</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="schedule-time">4:30 PM</span>
+                        <span class="schedule-event">Cocktail hour</span>
+                    </li>
+                    <li>
+                        <span class="schedule-time">5:30 PM</span>
+                        <span class="schedule-event">Reception</span>
+                    </li>
+                    <li>
+                        <span class="schedule-time">7:30 PM</span>
+                        <span class="schedule-event">Afterparty</span>
+                    </li>
                 </ul>
-                <p class="cocktail-vibe">Effervescent, lively, and perfectly balanced — bright citrus and subtle botanicals for the ultimate celebration.</p>
-            </article>
+            </div>
+        </section>
+
+        <div class="scatter bw-collage" aria-hidden="true">
+            <img class="scatter-photo scatter-photo--wide" src="assets/images/wedding/holding-hands-window.jpg" alt="">
+            <img class="scatter-photo scatter-photo--accent" src="assets/images/wedding/couple-back-to-back.jpg" alt="">
         </div>
-    </section>
+
+        <section class="info-section" id="dress-code">
+            <div class="section-label">What to wear</div>
+            <h2 class="info-title">Dress Code</h2>
+            <div class="info-card">
+                <p class="info-name">Garden formal</p>
+                <p class="info-body">Think cocktail attire with comfortable shoes for the lawn and garden paths. Soft neutrals, florals, and warm tones are welcome.</p>
+            </div>
+        </section>
+
+        <div class="scatter white-trio" aria-hidden="true">
+            <img class="scatter-photo" src="assets/images/wedding/couple-white.jpg" alt="">
+            <img class="scatter-photo" src="assets/images/wedding/couple-floral.jpg" alt="">
+            <img class="scatter-photo" src="assets/images/wedding/couple-white-seated.jpg" alt="">
+        </div>
+
+        <figure class="scatter wide-moment" aria-hidden="true">
+            <img src="assets/images/wedding/window-back.jpg" alt="">
+            <figcaption>Wherever we go next — take my hand.</figcaption>
+        </figure>
+
+        <div class="scatter detail-pair" aria-hidden="true">
+            <img class="scatter-photo scatter-photo--main" src="assets/images/wedding/couple-sitting.jpg" alt="">
+            <img class="scatter-photo scatter-photo--side" src="assets/images/wedding/bouquet-shadow.jpg" alt="">
+        </div>
+    </main>
 
     <section class="rsvp-cta">
+        <p class="rsvp-cta-text">Please RSVP by July 10, 2026</p>
         <button class="scroll-button rsvp-cta-btn" onclick="scrollToSection('form-section')">
             <span>RSVP</span>
             <div class="scroll-arrow">↓</div>
@@ -211,7 +138,7 @@
         <div class="form-content">
             <div class="form-header">
                 <h2>Kindly Respond</h2>
-                <p>Please RSVP by July 10, 2026.<br>One response per invitation, please.</p>
+                <p>One response per invitation, please.</p>
             </div>
 
             <div class="form-container">
@@ -246,28 +173,6 @@
                         <div class="form-group partner-group" id="partnerGroup" hidden>
                             <label for="partnerName">Partner's name</label>
                             <input type="text" id="partnerName" placeholder="Full name">
-                        </div>
-
-                        <div class="form-group" id="drinkPrefsGroup">
-                            <label>Excited to try? <span class="label-optional">(optional)</span></label>
-                            <p class="form-hint">Tell us what you're leaning toward at cocktail hour.</p>
-                            <div class="drink-pref-list">
-                                <label class="drink-pref-item" data-pref="agave">
-                                    <input type="checkbox" id="prefAgave" value="Agave Empowerment">
-                                    <span class="drink-pref-dot drink-pref-dot--his"></span>
-                                    <span>Agave Empowerment <em>(his)</em></span>
-                                </label>
-                                <label class="drink-pref-item" data-pref="sylva">
-                                    <input type="checkbox" id="prefSylva" value="Sylva Spritz">
-                                    <span class="drink-pref-dot drink-pref-dot--hers"></span>
-                                    <span>Sylva Spritz <em>(hers)</em></span>
-                                </label>
-                                <label class="drink-pref-item" data-pref="surprise">
-                                    <input type="checkbox" id="prefSurprise" value="Surprise me with Wine/Beer instead!">
-                                    <span class="drink-pref-dot drink-pref-dot--neutral"></span>
-                                    <span>Surprise me with wine / beer instead!</span>
-                                </label>
-                            </div>
                         </div>
 
                         <div class="form-group">

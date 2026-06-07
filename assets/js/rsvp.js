@@ -68,31 +68,6 @@ function updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput, at
     }
 }
 
-function getSelectedDrinkPrefs() {
-    return ['prefAgave', 'prefSylva', 'prefSurprise']
-        .map((id) => document.getElementById(id))
-        .filter((input) => input && input.checked)
-        .map((input) => input.value);
-}
-
-function updateCardSelectedState() {
-    document.querySelectorAll('.cocktail-card').forEach((card) => {
-        const checkboxId = card.dataset.drinkCheckbox;
-        const checkbox = checkboxId ? document.getElementById(checkboxId) : null;
-        card.classList.toggle('is-selected', !!(checkbox && checkbox.checked));
-    });
-}
-
-function clearDrinkPrefs() {
-    ['prefAgave', 'prefSylva', 'prefSurprise'].forEach((id) => {
-        const input = document.getElementById(id);
-        if (input) {
-            input.checked = false;
-        }
-    });
-    updateCardSelectedState();
-}
-
 function updateAttendingDetails(form, attendingDetails, bringingPartner, partnerGroup, partnerInput, notesInput) {
     const attending = isAttendingYes(form);
     attendingDetails.hidden = !attending;
@@ -105,67 +80,7 @@ function updateAttendingDetails(form, attendingDetails, bringingPartner, partner
     } else {
         notesInput.removeAttribute('name');
         notesInput.value = '';
-        clearDrinkPrefs();
     }
-}
-
-function setupDrinkPreferenceLogic(prefAgave, prefSylva, prefSurprise) {
-    const signaturePrefs = [prefAgave, prefSylva];
-
-    signaturePrefs.forEach((input) => {
-        input.addEventListener('change', () => {
-            if (input.checked) {
-                prefSurprise.checked = false;
-            }
-            updateCardSelectedState();
-        });
-    });
-
-    prefSurprise.addEventListener('change', () => {
-        if (prefSurprise.checked) {
-            signaturePrefs.forEach((input) => {
-                input.checked = false;
-            });
-        }
-        updateCardSelectedState();
-    });
-
-    document.querySelectorAll('.cocktail-card').forEach((card) => {
-        const toggleCard = () => {
-            scrollToSection('form-section');
-
-            const checkboxId = card.dataset.drinkCheckbox;
-            const checkbox = checkboxId ? document.getElementById(checkboxId) : null;
-            const attendingDetails = document.getElementById('attendingDetails');
-
-            if (!checkbox || attendingDetails.hidden) {
-                return;
-            }
-
-            checkbox.checked = !checkbox.checked;
-            checkbox.dispatchEvent(new Event('change'));
-        };
-
-        card.addEventListener('click', toggleCard);
-        card.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                toggleCard();
-            }
-        });
-    });
-}
-
-function buildNotesPayload(notesInput) {
-    const baseNotes = notesInput.value.trim();
-    const drinkPrefs = getSelectedDrinkPrefs();
-
-    if (!drinkPrefs.length) {
-        return baseNotes;
-    }
-
-    const drinkLine = `Drink preferences: ${drinkPrefs.join('; ')}`;
-    return baseNotes ? `${baseNotes}\n\n${drinkLine}` : drinkLine;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -177,13 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const partnerGroup = document.getElementById('partnerGroup');
     const partnerInput = document.getElementById('partnerName');
     const notesInput = document.getElementById('notes');
-    const prefAgave = document.getElementById('prefAgave');
-    const prefSylva = document.getElementById('prefSylva');
-    const prefSurprise = document.getElementById('prefSurprise');
     const attendingRadios = form.querySelectorAll('input[name="attending"]');
 
     bindGoogleFormFields(form);
-    setupDrinkPreferenceLogic(prefAgave, prefSylva, prefSurprise);
 
     attendingRadios.forEach((radio) => {
         radio.addEventListener('change', () => {
@@ -202,23 +113,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.expand-panel, .rsvp-intro, .drinks-section, .form-section').forEach((section) => {
+    document.querySelectorAll('.info-section, .scatter, .letter-block, .form-section').forEach((section) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(18px)';
+        section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
         observer.observe(section);
-    });
-
-    document.querySelectorAll('.expand-panel').forEach((panel) => {
-        panel.addEventListener('toggle', () => {
-            if (!panel.open) {
-                return;
-            }
-            document.querySelectorAll('.expand-panel').forEach((other) => {
-                if (other !== panel) {
-                    other.open = false;
-                }
-            });
-        });
     });
 
     const scrollButton = document.querySelector('.scroll-button');
@@ -238,10 +139,8 @@ document.addEventListener('DOMContentLoaded', function() {
             partnerInput.value = '';
             notesInput.removeAttribute('name');
             notesInput.value = '';
-            clearDrinkPrefs();
             successText.textContent = "Thank you for letting us know. We'll miss you!";
         } else {
-            notesInput.value = buildNotesPayload(notesInput);
             successText.textContent = "We've received your RSVP and can't wait to celebrate with you.";
         }
 
