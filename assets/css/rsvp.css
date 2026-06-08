@@ -298,6 +298,7 @@ body.rsvp-page {
 .stagger-pair .scatter-photo--small.scatter-photo--left {
     width: 42%;
     max-width: 220px;
+    aspect-ratio: auto;
     margin-top: 2rem;
 }
 

@@ -1,13 +1,11 @@
 const RSVP_FORM_CONFIG = {
     action: 'https://docs.google.com/forms/d/e/1FAIpQLSek3O0Ta8dYN3tGK3NvSJUkrFExTW_OPvDdD_7Rm3ABGWyptQ/formResponse',
     fields: {
-        yourName: 'entry.253243517',
-        partnerName: 'entry.407071966',
-        attending: 'entry.1291323824',
-        notes: 'entry.206253920'
-    },
-    fbzx: '4587660607938263854',
-    partialResponse: '[null,null,"4587660607938263854"]'
+        yourName: 'entry.1059864759',
+        partnerName: 'entry.2020307388',
+        attending: 'entry.1219232297',
+        notes: 'entry.1942269536'
+    }
 };
 
 function scrollToSection(id) {
@@ -45,7 +43,7 @@ function scrollToRsvpForm() {
 }
 
 function bindGoogleFormFields(form) {
-    const { action, fields, fbzx, partialResponse } = RSVP_FORM_CONFIG;
+    const { action, fields } = RSVP_FORM_CONFIG;
 
     form.action = action;
     document.getElementById('yourName').name = fields.yourName;
@@ -53,24 +51,6 @@ function bindGoogleFormFields(form) {
     form.querySelectorAll('input[name="attending"]').forEach((radio) => {
         radio.name = fields.attending;
     });
-
-    let fbzxInput = form.querySelector('input[name="fbzx"]');
-    if (!fbzxInput) {
-        fbzxInput = document.createElement('input');
-        fbzxInput.type = 'hidden';
-        fbzxInput.name = 'fbzx';
-        form.appendChild(fbzxInput);
-    }
-    fbzxInput.value = fbzx;
-
-    let partialInput = form.querySelector('input[name="partialResponse"]');
-    if (!partialInput) {
-        partialInput = document.createElement('input');
-        partialInput.type = 'hidden';
-        partialInput.name = 'partialResponse';
-        form.appendChild(partialInput);
-    }
-    partialInput.value = partialResponse;
 }
 
 function isAttendingYes(form) {
