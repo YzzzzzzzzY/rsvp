@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('rsvpForm');
     const successMessage = document.getElementById('successMessage');
     const successText = document.getElementById('successText');
+    const successGiftNote = document.getElementById('successGiftNote');
     const attendingDetails = document.getElementById('attendingDetails');
     const bringingPartner = document.getElementById('bringingPartner');
     const partnerGroup = document.getElementById('partnerGroup');
@@ -136,15 +137,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.addEventListener('submit', function() {
-        if (!isAttendingYes(form)) {
+        const attending = isAttendingYes(form);
+
+        if (!attending) {
             bringingPartner.checked = false;
             partnerInput.removeAttribute('name');
             partnerInput.value = '';
             notesInput.removeAttribute('name');
             notesInput.value = '';
             successText.textContent = "Thank you for letting us know. We'll miss you!";
+            successGiftNote.hidden = true;
         } else {
             successText.textContent = "We've received your RSVP and can't wait to celebrate with you.";
+            successGiftNote.hidden = false;
         }
 
         const btnText = form.querySelector('.btn-text');
@@ -154,6 +159,11 @@ document.addEventListener('DOMContentLoaded', function() {
         btnLoading.style.display = 'inline';
 
         setTimeout(() => {
+            if (attending) {
+                window.location.href = 'gifts.html';
+                return;
+            }
+
             form.style.display = 'none';
             successMessage.style.display = 'block';
         }, 1500);
