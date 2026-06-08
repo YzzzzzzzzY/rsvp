@@ -21,6 +21,29 @@ function scrollToForm() {
     scrollToSection('form-section');
 }
 
+function scrollToRsvpForm() {
+    const formSection = document.getElementById('form-section');
+    if (!formSection) return;
+
+    const isPhone = window.matchMedia('(max-width: 600px)').matches;
+    if (!isPhone) {
+        formSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        return;
+    }
+
+    const targetY = Math.max(
+        0,
+        formSection.offsetTop + formSection.offsetHeight - window.innerHeight
+    );
+    window.scrollTo({
+        top: targetY,
+        behavior: 'smooth'
+    });
+}
+
 function bindGoogleFormFields(form) {
     const { action, fields, fbzx, partialResponse } = RSVP_FORM_CONFIG;
 
