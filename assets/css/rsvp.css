@@ -563,12 +563,11 @@ body.rsvp-page {
 
 .detail-trio .detail-trio__hands {
     grid-column: 1;
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: auto;
     max-width: 150px;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
-    object-position: center 22%;
     margin-top: 2rem;
     margin-right: -0.5rem;
     justify-self: end;
@@ -604,6 +603,12 @@ body.rsvp-page {
     font-size: 1.1rem;
     font-style: italic;
     color: #6f6258;
+}
+
+@media (min-width: 769px) {
+    .wide-moment img {
+        height: 420px;
+    }
 }
 
 .detail-pair {
@@ -861,11 +866,10 @@ body.rsvp-page {
     }
 
     .detail-trio .detail-trio__hands {
-        width: 34vw;
-        height: 34vw;
+        width: 100%;
+        height: auto;
         max-width: none;
-        aspect-ratio: 1 / 1;
-        object-position: center 22%;
+        aspect-ratio: 3 / 4;
     }
 
     .detail-trio__side {
