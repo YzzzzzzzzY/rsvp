@@ -14,6 +14,11 @@
     <main class="gift-section">
         <div class="gift-card">
             <a class="gift-back-link" href="index.html">Back to RSVP</a>
+            <section class="gift-rsvp-response" id="giftRsvpResponse" hidden>
+                <div class="success-icon">✨</div>
+                <h2>Thank you!</h2>
+                <p>We've received your RSVP and can't wait to celebrate with you.</p>
+            </section>
             <div class="section-label">Gifts</div>
             <h1 class="info-title">Honeymoon Fund</h1>
             <p>If you’d like to send a gift, we’ll be putting it toward our honeymoon and the little adventures after.</p>
@@ -23,5 +28,13 @@
             </div>
         </div>
     </main>
+    <script>
+    (function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('rsvp') === 'yes') {
+            document.getElementById('giftRsvpResponse').hidden = false;
+        }
+    })();
+    </script>
 </body>
 </html>

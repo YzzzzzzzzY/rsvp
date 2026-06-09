@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
             notesInput.removeAttribute('name');
             notesInput.value = '';
             successText.textContent = "Thank you for letting us know. We'll miss you!";
-            successGiftNote.hidden = true;
+            successGiftNote.hidden = false;
         } else {
             successText.textContent = "We've received your RSVP and can't wait to celebrate with you.";
             successGiftNote.hidden = false;
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         setTimeout(() => {
             if (attending) {
-                window.location.href = 'gifts.html';
+                window.location.href = 'gifts.html?rsvp=yes';
                 return;
             }
 
