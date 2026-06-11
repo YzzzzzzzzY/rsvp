@@ -6,9 +6,16 @@ body.rsvp-page {
         linear-gradient(180deg, #f5eee6 0%, #efe5da 58%, #eadfd2 100%);
 }
 
-.rsvp-hero {
-    background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-                url('../images/wedding/06-outdoor-backlit-veil.jpg') center 40%/cover no-repeat;
+.hero.rsvp-hero {
+    --hero-image: url('../images/hero-candidates/r13.jpg');
+    --hero-position: center 40%;
+    background-color: #2a2018;
+    background-image:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)),
+        var(--hero-image);
+    background-position: center, var(--hero-position);
+    background-size: auto, cover;
+    background-repeat: no-repeat, no-repeat;
 }
 
 .rsvp-hero .invitation-text {
@@ -35,6 +42,10 @@ body.rsvp-page {
 
 .rsvp-hero .hero-button {
     transform: translateY(-2rem);
+}
+
+.rsvp-hero .hero-intro {
+    text-align: center;
 }
 
 .invitation-paper {
@@ -327,9 +338,10 @@ body.rsvp-page {
 }
 
 .stagger-pair--mixed .scatter-photo--landscape.scatter-photo--left {
-    width: 58%;
-    max-width: 360px;
+    width: 50%;
+    max-width: 280px;
     aspect-ratio: 1 / 1;
+    object-position: center top;
 }
 
 .polaroid {
@@ -893,9 +905,29 @@ body.rsvp-page {
         margin-top: 5.5rem;
     }
 
+    .rsvp-hero .hero-content {
+        padding-bottom: 10vh;
+    }
+
+    .rsvp-hero .hero-intro {
+        display: contents;
+    }
+
+    .rsvp-hero .hero-text {
+        flex: 1 1 auto;
+    }
+
     .rsvp-hero .invitation-text {
         font-size: 0.98rem;
         white-space: nowrap;
+        margin-top: auto;
+        margin-bottom: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    .rsvp-hero .hero-button {
+        flex-shrink: 0;
+        transform: none;
     }
 
     .rsvp-hero .location-separator {
@@ -1051,8 +1083,7 @@ body.rsvp-page {
         grid-template-columns: 4rem 1fr;
     }
 
-    .rsvp-hero {
-        background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-                    url('../images/wedding/06-outdoor-backlit-veil.jpg') center 35%/cover no-repeat;
+    .hero.rsvp-hero {
+        --hero-position: center 35%;
     }
 }
