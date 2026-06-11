@@ -354,7 +354,7 @@ body.rsvp-page {
 .editorial-collage {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem 2rem;
+    gap: 1.25rem 1.5rem;
     width: 100%;
     margin: 1.5rem 0 3rem;
 }
@@ -405,7 +405,7 @@ body.rsvp-page {
 
 .editorial-collage__cluster--left .editorial-collage__tile--doorway {
     z-index: 1;
-    width: 68%;
+    width: 78%;
     justify-self: end;
 }
 
@@ -416,7 +416,7 @@ body.rsvp-page {
 
 .editorial-collage__cluster--right .editorial-collage__tile--arch {
     z-index: 1;
-    width: 68%;
+    width: 78%;
     justify-self: start;
 }
 
@@ -460,8 +460,9 @@ body.rsvp-page {
 
 @media (min-width: 769px) {
     .editorial-collage {
-        gap: 2rem 3rem;
-        margin: 2rem 0 3.5rem;
+        gap: 1.75rem 2rem;
+        width: calc(100% + 3rem);
+        margin: 2rem -1.5rem 3.5rem;
     }
 
     .editorial-collage__cluster {
@@ -470,7 +471,7 @@ body.rsvp-page {
 
     .editorial-collage__cluster--left .editorial-collage__tile--doorway,
     .editorial-collage__cluster--right .editorial-collage__tile--arch {
-        width: 62%;
+        width: 76%;
     }
 }
 
@@ -720,6 +721,12 @@ body.rsvp-page {
 
 .rsvp-form-section .form-header p {
     line-height: 1.5;
+}
+
+.name-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
 }
 
 .success-gift-note {

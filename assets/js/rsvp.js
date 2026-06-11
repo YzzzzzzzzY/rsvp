@@ -53,30 +53,43 @@ function bindGoogleFormFields(form) {
     });
 }
 
+function updateFullNameField(firstNameInput, lastNameInput, fullNameInput) {
+    const fullName = [firstNameInput.value, lastNameInput.value]
+        .map((value) => value.trim())
+        .filter(Boolean)
+        .join(' ');
+    fullNameInput.value = fullName;
+}
+
 function isAttendingYes(form) {
     const attendingField = form.querySelector('input[type="radio"]:checked');
     return attendingField && attendingField.value === 'Yes';
 }
 
-function updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput, attending) {
+function updatePartnerVisibility(bringingPartner, partnerGroup, partnerFirstNameInput, partnerLastNameInput, partnerInput, attending) {
     const showPartner = attending && bringingPartner.checked;
     partnerGroup.hidden = !showPartner;
-    partnerInput.required = showPartner;
+    partnerFirstNameInput.required = showPartner;
+    partnerLastNameInput.required = showPartner;
 
     if (showPartner) {
         partnerInput.name = RSVP_FORM_CONFIG.fields.partnerName;
     } else {
+        partnerFirstNameInput.required = false;
+        partnerLastNameInput.required = false;
+        partnerFirstNameInput.value = '';
+        partnerLastNameInput.value = '';
         partnerInput.removeAttribute('name');
         partnerInput.value = '';
     }
 }
 
-function updateAttendingDetails(form, attendingDetails, bringingPartner, partnerGroup, partnerInput, notesInput) {
+function updateAttendingDetails(form, attendingDetails, bringingPartner, partnerGroup, partnerFirstNameInput, partnerLastNameInput, partnerInput, notesInput) {
     const attending = isAttendingYes(form);
     attendingDetails.hidden = !attending;
 
     bringingPartner.checked = false;
-    updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput, attending);
+    updatePartnerVisibility(bringingPartner, partnerGroup, partnerFirstNameInput, partnerLastNameInput, partnerInput, attending);
 
     if (attending) {
         notesInput.name = RSVP_FORM_CONFIG.fields.notes;
@@ -91,9 +104,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const successMessage = document.getElementById('successMessage');
     const successText = document.getElementById('successText');
     const successGiftNote = document.getElementById('successGiftNote');
+    const firstNameInput = document.getElementById('firstName');
+    const lastNameInput = document.getElementById('lastName');
+    const fullNameInput = document.getElementById('yourName');
     const attendingDetails = document.getElementById('attendingDetails');
     const bringingPartner = document.getElementById('bringingPartner');
     const partnerGroup = document.getElementById('partnerGroup');
+    const partnerFirstNameInput = document.getElementById('partnerFirstName');
+    const partnerLastNameInput = document.getElementById('partnerLastName');
     const partnerInput = document.getElementById('partnerName');
     const notesInput = document.getElementById('notes');
     const attendingRadios = form.querySelectorAll('input[name="attending"]');
@@ -102,12 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     attendingRadios.forEach((radio) => {
         radio.addEventListener('change', () => {
-            updateAttendingDetails(form, attendingDetails, bringingPartner, partnerGroup, partnerInput, notesInput);
+            updateAttendingDetails(form, attendingDetails, bringingPartner, partnerGroup, partnerFirstNameInput, partnerLastNameInput, partnerInput, notesInput);
         });
     });
 
     bringingPartner.addEventListener('change', () => {
-        updatePartnerVisibility(bringingPartner, partnerGroup, partnerInput, isAttendingYes(form));
+        updatePartnerVisibility(bringingPartner, partnerGroup, partnerFirstNameInput, partnerLastNameInput, partnerInput, isAttendingYes(form));
     });
 
     const observer = new IntersectionObserver((entries) => {
@@ -138,9 +156,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', function() {
         const attending = isAttendingYes(form);
+        updateFullNameField(firstNameInput, lastNameInput, fullNameInput);
+        updateFullNameField(partnerFirstNameInput, partnerLastNameInput, partnerInput);
 
         if (!attending) {
             bringingPartner.checked = false;
+            partnerFirstNameInput.value = '';
+            partnerLastNameInput.value = '';
             partnerInput.removeAttribute('name');
             partnerInput.value = '';
             notesInput.removeAttribute('name');

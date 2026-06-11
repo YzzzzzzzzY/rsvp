@@ -205,8 +205,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="yourName">Your name</label>
-                        <input type="text" id="yourName" required placeholder="Full name">
+                        <label>Your name</label>
+                        <div class="name-fields">
+                            <input type="text" id="firstName" required placeholder="First name" autocomplete="given-name">
+                            <input type="text" id="lastName" required placeholder="Last name" autocomplete="family-name">
+                        </div>
+                        <input type="hidden" id="yourName">
                     </div>
 
                     <div id="attendingDetails" hidden>
@@ -218,8 +222,12 @@
                         </div>
 
                         <div class="form-group partner-group" id="partnerGroup" hidden>
-                            <label for="partnerName">Partner's name</label>
-                            <input type="text" id="partnerName" placeholder="Full name">
+                            <label>Partner's name</label>
+                            <div class="name-fields">
+                                <input type="text" id="partnerFirstName" placeholder="First name" autocomplete="given-name">
+                                <input type="text" id="partnerLastName" placeholder="Last name" autocomplete="family-name">
+                            </div>
+                            <input type="hidden" id="partnerName">
                         </div>
 
                         <div class="form-group">
