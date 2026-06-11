@@ -229,12 +229,16 @@ body.rsvp-page {
     color: #6f6258;
 }
 
-.mini-note p:last-child {
+.mini-note p:not(.mini-note__eyebrow) {
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.06rem;
     line-height: 1.65;
     color: #4a4038;
+}
+
+.mini-note__line + .mini-note__line {
+    margin-top: 0.65rem;
 }
 
 /* Scattered photos — wechat-inspired */
@@ -888,6 +892,19 @@ body.rsvp-page {
 @media (max-width: 600px) {
     .invitation-paper {
         padding: 2rem 1rem 2.5rem;
+    }
+
+    .mini-note--center {
+        width: 100%;
+        max-width: none;
+        padding-left: 0.15rem;
+        padding-right: 0.15rem;
+    }
+
+    .mini-note--center .mini-note__line {
+        font-size: clamp(0.82rem, 3.4vw, 1.06rem);
+        line-height: 1.45;
+        text-wrap: balance;
     }
 
     .photo-group + .info-section {
