@@ -341,7 +341,7 @@ body.rsvp-page {
     width: 50%;
     max-width: 280px;
     aspect-ratio: 1 / 1;
-    object-position: center top;
+    object-position: center 18%;
 }
 
 .polaroid {
@@ -424,6 +424,7 @@ body.rsvp-page {
 .editorial-collage__tile--doorway img {
     aspect-ratio: 3 / 4;
     height: auto;
+    object-position: center 75%;
 }
 
 .editorial-collage__cluster--right .editorial-collage__tile--arch {
@@ -657,6 +658,11 @@ body.rsvp-page {
     font-size: 1.1rem;
     color: #666;
     margin: 0 0 1rem;
+}
+
+.rsvp-cta .scroll-arrow--cta {
+    color: #8B4513;
+    text-shadow: none;
 }
 
 .rsvp-cta-btn {
@@ -906,6 +912,7 @@ body.rsvp-page {
     }
 
     .rsvp-hero .hero-content {
+        padding-top: 6vh;
         padding-bottom: 10vh;
     }
 
@@ -915,6 +922,28 @@ body.rsvp-page {
 
     .rsvp-hero .hero-text {
         flex: 1 1 auto;
+        align-self: flex-start;
+        width: 100%;
+    }
+
+    .rsvp-hero .couple-names {
+        margin-bottom: 0.6rem;
+    }
+
+    .rsvp-hero .ampersand {
+        margin: 0.2rem 0;
+    }
+
+    .rsvp-hero .wedding-details {
+        margin-bottom: 0;
+    }
+
+    .rsvp-hero .date {
+        margin-bottom: 0.2rem;
+    }
+
+    .rsvp-hero .location {
+        line-height: 1.35;
     }
 
     .rsvp-hero .invitation-text {

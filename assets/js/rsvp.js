@@ -144,15 +144,15 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    const scrollButton = document.querySelector('.scroll-button');
-    if (scrollButton) {
+    const scrollButtons = document.querySelectorAll('.scroll-button');
+    scrollButtons.forEach((scrollButton) => {
         scrollButton.addEventListener('mouseenter', () => {
             scrollButton.style.transform = 'translateY(-3px) scale(1.02)';
         });
         scrollButton.addEventListener('mouseleave', () => {
             scrollButton.style.transform = 'translateY(0) scale(1)';
         });
-    }
+    });
 
     form.addEventListener('submit', function() {
         const attending = isAttendingYes(form);

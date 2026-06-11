@@ -155,6 +155,13 @@ body {
     align-self: center;
 }
 
+.scroll-cta {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .scroll-button {
     background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
     border: 2px solid rgba(255,255,255,0.3);
@@ -168,8 +175,11 @@ body {
     letter-spacing: 1px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    position: relative;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .scroll-button:hover {
@@ -180,9 +190,11 @@ body {
 }
 
 .scroll-arrow {
-    margin-top: 0.5rem;
+    margin-top: 0;
     font-size: 1.2rem;
+    line-height: 1;
     animation: bounce 2s infinite;
+    pointer-events: none;
 }
 
 /* Form Section */

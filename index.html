@@ -29,10 +29,12 @@
                 <p class="invitation-text">We would be honored to celebrate this day with you.</p>
             </div>
             <div class="hero-button">
-                <button class="scroll-button" onclick="scrollToSection('invitation-paper')">
-                    <span>View invitation</span>
-                    <div class="scroll-arrow">↓</div>
-                </button>
+                <div class="scroll-cta">
+                    <button class="scroll-button" onclick="scrollToSection('invitation-paper')">
+                        <span>View invitation</span>
+                    </button>
+                    <div class="scroll-arrow" aria-hidden="true">↓</div>
+                </div>
             </div>
         </div>
     </section>
@@ -177,10 +179,12 @@
 
     <section class="rsvp-cta">
         <p class="rsvp-cta-text">Please RSVP by July 10, 2026</p>
-        <button class="scroll-button rsvp-cta-btn" onclick="scrollToRsvpForm()">
-            <span>RSVP</span>
-            <div class="scroll-arrow">↓</div>
-        </button>
+        <div class="scroll-cta">
+            <button class="scroll-button rsvp-cta-btn" onclick="scrollToRsvpForm()">
+                <span>RSVP</span>
+            </button>
+            <div class="scroll-arrow scroll-arrow--cta" aria-hidden="true">↓</div>
+        </div>
     </section>
 
     <section class="form-section rsvp-form-section" id="form-section">
