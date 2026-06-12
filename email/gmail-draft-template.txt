@@ -1,0 +1,34 @@
+SUBJECT (pick one):
+You're invited — Zhen & Yan, August 22
+Our wedding invitation (+ RSVP inside)
+
+---
+
+PASTE INTO GMAIL COMPOSE (then format with bold/link as you like):
+
+[Insert image(s) → URL — use one or both:]
+
+Hero (walking):
+https://yzzzzzzzzy.github.io/rsvp/assets/images/ez-email/email-walking.jpg
+
+Optional second (hands):
+https://yzzzzzzzzy.github.io/rsvp/assets/images/ez-email/email-hands.jpg
+
+WEDDING INVITATION
+
+Zhen Yu & Yan Zhang
+Saturday, August 22, 2026 · Menlo Park, California
+
+Dear {{First Name}},
+
+You saved the date with us — thank you. We would be honored to celebrate with you. All the details and RSVP are here:
+
+https://YzzzzzzzzY.github.io/rsvp/
+(link target stays lowercase: https://yzzzzzzzzy.github.io/rsvp/)
+
+With love,
+Zhen & Yan
+
+---
+
+YAMM MERGE TAG: {{First Name}} must match your Google Sheet column header exactly.
