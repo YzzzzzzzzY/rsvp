@@ -1,24 +1,24 @@
 const TABLES = [
-  { number: 8, seats: [1, 2, 3, 4, 5], kind: "large", x: 474, y: 114, width: 112, height: 112 },
-  { number: null, seats: [6, 7, 8], kind: "small", x: 414, y: 179, width: 72, height: 72 },
-  { number: 9, seats: [9, 10, 11, 12, 13], kind: "large", x: 344, y: 236, width: 112, height: 112 },
-  { number: null, seats: [14, 15, 16], kind: "small", x: 344, y: 346, width: 72, height: 72 },
-  { number: 10, seats: [17, 18, 19, 20, 21], kind: "large", x: 344, y: 416, width: 112, height: 112 },
-  { number: null, seats: [22, 23, 24], kind: "small", x: 414, y: 513, width: 72, height: 72 },
-  { number: 11, seats: [25, 26, 27, 28, 29], kind: "large", x: 474, y: 538, width: 112, height: 112 },
-  { number: 4, seats: [30, 31, 32, 33, 34], kind: "large", x: 814, y: 114, width: 112, height: 112 },
-  { number: null, seats: [35, 36, 37], kind: "small", x: 914, y: 179, width: 72, height: 72 },
-  { number: 5, seats: [38, 39, 40, 41, 42], kind: "large", x: 944, y: 236, width: 112, height: 112 },
-  { number: null, seats: [43, 44, 45], kind: "small", x: 984, y: 346, width: 72, height: 72 },
-  { number: 6, seats: [46, 47, 48, 49, 50], kind: "large", x: 944, y: 416, width: 112, height: 112 },
-  { number: null, seats: [51, 52, 53], kind: "small", x: 914, y: 513, width: 72, height: 72 },
-  { number: 7, seats: [54, 55, 56, 57, 58], kind: "large", x: 814, y: 538, width: 112, height: 112 },
-  { number: 1, seats: [59, 60, 61, 62, 63, 64, 65, 66], kind: "rectangular", x: 1250, y: 150, width: 110, height: 150 },
-  { number: 2, seats: [67, 68, 69, 70, 71, 72, 73, 74], kind: "rectangular", x: 1250, y: 300, width: 110, height: 150 },
-  { number: 3, seats: [75, 76, 77, 78, 79, 80, 81, 82], kind: "rectangular", x: 1250, y: 450, width: 110, height: 150 },
+  { number: 1, seats: [1, 2, 3, 4, 5, 6, 7, 8], kind: "rectangular", x: 1250, y: 150, width: 110, height: 150 },
+  { number: 2, seats: [9, 10, 11, 12, 13, 14, 15, 16], kind: "rectangular", x: 1250, y: 300, width: 110, height: 150 },
+  { number: 3, seats: [17, 18, 19, 20, 21, 22, 23, 24], kind: "rectangular", x: 1250, y: 450, width: 110, height: 150 },
+  { number: 4, seats: [25, 26, 27, 28, 29], kind: "large", x: 814, y: 114, width: 112, height: 112 },
+  { number: null, seats: [30, 31, 32], kind: "small", x: 914, y: 179, width: 72, height: 72 },
+  { number: 5, seats: [33, 34, 35, 36, 37], kind: "large", x: 944, y: 236, width: 112, height: 112 },
+  { number: null, seats: [38, 39, 40], kind: "small", x: 984, y: 346, width: 72, height: 72 },
+  { number: 6, seats: [41, 42, 43, 44, 45], kind: "large", x: 944, y: 416, width: 112, height: 112 },
+  { number: null, seats: [46, 47, 48], kind: "small", x: 914, y: 513, width: 72, height: 72 },
+  { number: 7, seats: [49, 50, 51, 52, 53], kind: "large", x: 814, y: 538, width: 112, height: 112 },
+  { number: 8, seats: [54, 55, 56, 57, 58], kind: "large", x: 474, y: 114, width: 112, height: 112 },
+  { number: null, seats: [59, 60, 61], kind: "small", x: 414, y: 179, width: 72, height: 72 },
+  { number: 9, seats: [62, 63, 64, 65, 66], kind: "large", x: 344, y: 236, width: 112, height: 112 },
+  { number: null, seats: [67, 68, 69], kind: "small", x: 344, y: 346, width: 72, height: 72 },
+  { number: 10, seats: [70, 71, 72, 73, 74], kind: "large", x: 344, y: 416, width: 112, height: 112 },
+  { number: null, seats: [75, 76, 77], kind: "small", x: 414, y: 513, width: 72, height: 72 },
+  { number: 11, seats: [78, 79, 80, 81, 82], kind: "large", x: 474, y: 538, width: 112, height: 112 },
 ];
 
-const SEAT_POSITIONS = {
+const SOURCE_SEAT_POSITIONS = {
   1:[477.72,89.5], 2:[533.95,82.74], 3:[578.5,117.72], 4:[585.26,173.95],
   5:[550.28,218.5], 6:[382.89,181.58], 7:[419.86,146.88], 8:[470.95,238.38],
   9:[313.32,297.93], 10:[315.76,247.37], 11:[350.13,210.2], 12:[457.74,282.14],
@@ -41,6 +41,14 @@ const SEAT_POSITIONS = {
   75:[1214,458], 76:[1214,492], 77:[1214,526], 78:[1214,560], 79:[1364,458],
   80:[1364,492], 81:[1364,526], 82:[1364,560],
 };
+const SEAT_NUMBER_ORDER = [
+  ...Array.from({ length: 24 }, (_, index) => index + 59),
+  ...Array.from({ length: 29 }, (_, index) => index + 30),
+  ...Array.from({ length: 29 }, (_, index) => index + 1),
+];
+const SEAT_POSITIONS = Object.fromEntries(
+  SEAT_NUMBER_ORDER.map((sourceSeat, index) => [index + 1, SOURCE_SEAT_POSITIONS[sourceSeat]]),
+);
 
 const SCALE = 1.18;
 const SOURCE_ORIGIN = { x: 280, y: 55 };
