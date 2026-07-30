@@ -1,0 +1,278 @@
+:root {
+  color: #302d29;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f1ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  padding: 28px max(24px, calc((100vw - 1420px) / 2));
+  color: #fff;
+  background: #292826;
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: #d7c8a6;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.page-header p:last-child {
+  margin: 7px 0 0;
+  color: #ccc7bd;
+  font-size: 13px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12px;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend i {
+  width: 12px;
+  height: 12px;
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.large-dot {
+  border-color: #477c9e !important;
+  background: #d9edf7;
+}
+
+.small-dot {
+  border-color: #c98235 !important;
+  background: #fff0d6;
+}
+
+.rect-dot {
+  border-color: #c69231 !important;
+  border-radius: 2px !important;
+  background: #fff4cf;
+}
+
+main {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 18px 24px 36px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid #d6d1c7;
+  border-radius: 12px;
+  background: #d6d1c7;
+}
+
+.summary div {
+  display: grid;
+  gap: 2px;
+  padding: 12px 16px;
+  background: #fff;
+}
+
+.summary strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.summary span {
+  color: #817c74;
+  font-size: 11px;
+}
+
+.plan-scroll {
+  overflow: auto;
+  border: 1px solid #d5d1c8;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.floor-plan {
+  position: relative;
+  width: 1420px;
+  height: 820px;
+  overflow: hidden;
+  background:
+    linear-gradient(#f2efe8 1px, transparent 1px),
+    linear-gradient(90deg, #f2efe8 1px, transparent 1px),
+    #fff;
+  background-size: 28px 28px;
+}
+
+.plan-title {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  gap: 4px;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.plan-title strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.plan-title span {
+  color: #858179;
+  font-size: 12px;
+}
+
+.open-area {
+  position: absolute;
+  top: 365px;
+  left: 455px;
+  width: 260px;
+  color: #aaa59b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.side-table-label {
+  position: absolute;
+  top: 92px;
+  left: 1065px;
+  color: #85653c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+}
+
+.floor-table {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  border: 2px solid #477c9e;
+  border-radius: 50%;
+  color: #386c8d;
+  background: #d9edf7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.floor-table.small {
+  border-color: #c98235;
+  color: #a96119;
+  background: #fff0d6;
+}
+
+.floor-table.rectangular {
+  border-color: #c69231;
+  border-radius: 14px;
+  color: #9a681b;
+  background: #fff4cf;
+}
+
+.seat {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #aaa59b;
+  border-radius: 6px;
+  color: #3c3a36;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(40, 36, 31, 0.08);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .page-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  main {
+    padding-inline: 12px;
+  }
+
+  .summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 0.25in;
+  }
+
+  .page-header {
+    padding: 0 0 0.12in;
+    color: #302d29;
+    background: #fff;
+  }
+
+  .eyebrow,
+  .page-header p:last-child {
+    color: #68635c;
+  }
+
+  .legend {
+    color: #302d29;
+  }
+
+  main {
+    width: 100%;
+    padding: 0;
+  }
+
+  .summary {
+    display: none;
+  }
+
+  .plan-scroll {
+    overflow: visible;
+    border: 0;
+  }
+
+  .floor-plan {
+    transform: scale(0.66);
+    transform-origin: top left;
+  }
+}
