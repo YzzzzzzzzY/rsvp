@@ -205,6 +205,20 @@ main {
   background: #fff4cf;
 }
 
+.floor-table.rectangular.rect-1 {
+  border-radius: 14px 14px 0 0;
+}
+
+.floor-table.rectangular.rect-2 {
+  border-top: 0;
+  border-radius: 0;
+}
+
+.floor-table.rectangular.rect-3 {
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+}
+
 .seat {
   position: absolute;
   z-index: 2;

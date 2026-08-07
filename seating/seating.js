@@ -1,7 +1,7 @@
 const TABLES = [
   { number: 1, seats: [1, 2, 3, 4, 5, 6, 7, 8], kind: "rectangular", lengthFeet: 8, x: 1250, y: 150, width: 110, height: 150 },
-  { number: 2, seats: [9, 10, 11, 12, 13, 14], kind: "rectangular", lengthFeet: 6, x: 1250, y: 318.75, width: 110, height: 112.5 },
-  { number: 3, seats: [15, 16, 17, 18, 19, 20, 21, 22], kind: "rectangular", lengthFeet: 8, x: 1250, y: 450, width: 110, height: 150 },
+  { number: 2, seats: [9, 10, 11, 12, 13, 14], kind: "rectangular", lengthFeet: 6, x: 1250, y: 300, width: 110, height: 112.5 },
+  { number: 3, seats: [15, 16, 17, 18, 19, 20, 21, 22], kind: "rectangular", lengthFeet: 8, x: 1250, y: 412.5, width: 110, height: 150 },
   { number: 4, seats: [23, 24, 25, 26, 27], kind: "large", x: 814, y: 114, width: 112, height: 112 },
   { number: null, seats: [28, 29, 30], kind: "small", x: 914, y: 179, width: 72, height: 72 },
   { number: 5, seats: [31, 32, 33, 34, 35], kind: "large", x: 944, y: 236, width: 112, height: 112 },
@@ -38,8 +38,8 @@ const SOURCE_SEAT_POSITIONS = {
   60:[1214,192], 61:[1214,226], 62:[1214,260], 63:[1364,158], 64:[1364,192],
   65:[1364,226], 66:[1364,260], 67:[1214,308], 68:[1214,342], 69:[1214,376],
   70:[1214,410], 71:[1364,308], 72:[1364,342], 73:[1364,376], 74:[1364,410],
-  75:[1214,458], 76:[1214,492], 77:[1214,526], 78:[1214,560], 79:[1364,458],
-  80:[1364,492], 81:[1364,526], 82:[1364,560],
+  75:[1214,420.5], 76:[1214,454.5], 77:[1214,488.5], 78:[1214,522.5],
+  79:[1364,420.5], 80:[1364,454.5], 81:[1364,488.5], 82:[1364,522.5],
 };
 const SEAT_NUMBER_ORDER = [
   63, 64, 65, 66, 62, 61, 60, 59,
@@ -69,6 +69,7 @@ function planY(sourceY) {
 function renderTable(table) {
   const surface = document.createElement("div");
   surface.className = `floor-table ${table.kind}`;
+  if (table.kind === "rectangular") surface.classList.add(`rect-${table.number}`);
   const diameterInches = ROUND_TABLE_DIAMETERS[table.kind];
   const sourceWidth = diameterInches
     ? diameterInches * ROUND_TABLE_PIXELS_PER_INCH
